@@ -12,35 +12,53 @@ from os import path
 class Loto5DB:
 
     def __init__(self):
+        self.db='' # Obj. que receberá db
+        self.cur='' # Obj.Cursor do db
         if path.isfile('loto5.db'): 
             print('Banco de dados localizado')
         else:
             print('Banco de dados não localizado')
-            db=sqlite3.connect('loto5.db')
-            db.close()
+            self.conectar()
+            self.criar_tabelas()
 
     # ===================================================================================================================
     # MÉTODOS DE CONEXÃO COM O BANCO DE DADOS
     # ===================================================================================================================
 
-    def connect(self): # METODO QUE INICIA A CONEXÃO COM BANCO DE DADOS
+    def conectar(self):
+        ''' Metodo que abre conexão com o db '''
         try:
             for x in range(2):
-                #print('TENTATIVA',x,'DE CONEXÃO COM SQLLITE')
+                print('TENTATIVA',x,'DE CONEXÃO COM SQLLITE')
                 try:
-                    self.con = psycopg2.connect(host='localhost',port='5432', user='postgres', password='123', dbname='meidb')
-                    self.c = self.con.cursor()
+                    self.db = sqlite3.connect('loto5.db')
+                    self.cur = self.db.cursor()
+                    print('Banco Conectado')
                     break
                 except: pass
         except:
             error='ERRO CONECTAR NO BANCO!'
-            messagebox.showerror('ERROR!', error)
             print(error)
 
-    def disconnect(self): # METODO QUE ENCERRA A CONEXÃO COM BANCO DE DADOS
-        self.c.close()
-        self.con.close()
-
+    def desconectar(self):
+        ''' Metodo que fecha conexão com o db '''
+        self.db.close()
+        print('Banco Desconectado')
+    def criar_tabelas(self):
+        '''Método que cria tabelas no db'''
+        self.conectar()
+        self.cur.execute("""CREATE TABLE usuario (
+        id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+        nome TEXT NOT NULL,
+        nome_pix TEXT,
+        cpf     VARCHAR(11) NOT NULL,
+        chave_pix VARCHAR(11),
+        fone TEXT,
+        cidade TEXT,
+        uf VARCHAR(2) NOT NULL,
+        criado_em DATE NOT NULL);""")
+        print('Tabelas Criadas')
+        self.desconectar()
 '''
     # ===================================================================================================================
     # MÉTODOS DE MANIPULAÇÃO PARA TABELA: CLIENTE
