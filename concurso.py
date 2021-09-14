@@ -2,10 +2,7 @@
 # CONCURSO
 
 
-from _typeshed import Self
-
-
 class Concurso:
-    def __init__(self,numc) -> None:
+    def __init__(self,numc):
         self.numc=numc
         self.data=''
