@@ -5,7 +5,6 @@ class Jogo:
     '''Classe de jogos/números.'''
     def __init__(self, jogo):
         self.jogo = jogo
-        print("JOGO: ",self.jogo)
 
     def seq_verificar(self):
         '''Metodo que retorna lista com sequência das divisões em grupo.'''
@@ -25,7 +24,9 @@ class Jogo:
         acertos=list(set(self.jogo) - set(erros))
         pontos=len(acertos)
         return {'erros':erros,'acertos':acertos,'pontos':pontos}
+
     def duplicado_verificar(self,comp):
+        '''Método que retorna boleano para "jogo duplicado?"'''
         dup=list(set(self.jogo)-set(comp))
         if not dup: return True
         else: return False

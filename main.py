@@ -13,13 +13,14 @@ jogo6 = [2, 3, 4, 7, 9, 10, 11, 12, 14, 16, 20, 21, 22, 24, 25]
 resultado = [2, 1, 24, 6, 9, 15, 13, 12, 22, 3, 21, 23, 25, 17, 5]
 
 #GRUPO DE APOSTAS
-# id_aposta,seq,nome_aposta,numeros, pontos, concurso, apostador, grupo
+
 #GRUPO DE RESULTADOS
 
 
 print("RESULTADO: ",resultado)
 j1=Jogo(jogo2)
 print(j1.seq_verificar())
-print(j1.pontos_verificar(resultado))
-print(j1.duplicado_verificar(jogo2))
+j11=j1.pontos_verificar(resultado)
+print(j11['pontos'])
+print(j1.duplicado_verificar(jogo6))
 
