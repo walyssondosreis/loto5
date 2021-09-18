@@ -1,8 +1,8 @@
 # coding: utf-8
 # LOTO5
-from os import path
-from jogo import *
-from loto5db import *
+
+from Model.usuario import Usuario
+
 '''
 #-------------------------------------------------------------------
 jogo1 = [1, 4, 5, 9, 10, 15, 13, 16, 18, 19, 20, 21, 23, 24, 25]
@@ -16,7 +16,19 @@ resultado = [2, 1, 24, 6, 9, 15, 13, 12, 22, 3, 21, 23, 25, 17, 5]
 #-------------------------------------------------------------------
 '''
 
-meubanco=Loto5DB()
+
+# Cadastro de Usuário
+user1=Usuario('walyssondosreis')
+user1.id=1
+user1.nome='Walysson Pereira dos Reis'
+user1.data_nasc='13.07.1994'
+user1.cpf='115.169.236.00'
+user1.telefone='38984337424'
+user1.pix=user1.cpf
+user1.email='walyssondosreis@gmail.com'
+user1.endereco='Rua 16,31,Jardim Olimpico'
+print(user1.reg())
+
 
 
 

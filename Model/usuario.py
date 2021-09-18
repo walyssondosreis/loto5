@@ -3,8 +3,9 @@
 
 
 class Usuario:
-    def __init__(self):
+    def __init__(self,usr):
         self.id=''
+        self.username=usr
         self.nome=''
         self.data_nasc=''
         self.cpf=''
@@ -14,4 +15,7 @@ class Usuario:
         self.endereco=''
     
     def reg(self):
-        pass
+        user= [self.id,self.username,self.nome,
+                self.data_nasc,self.cpf,
+                self.telefone,self.pix,self.email,self.endereco]
+        return user
