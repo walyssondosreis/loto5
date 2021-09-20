@@ -1,15 +1,13 @@
 # coding: utf-8
 # Resultado
 
-from Model.os15 import Os15
-from Model.concurso import Concurso
+from Model.numlist import NumList
 
 
-class Resultado(Os15):
+class Resultado(NumList):
     ''' Classe que manipula números do resultado'''
-    def __init__(self):
-        super().__init__()
-        self.cc=Concurso()
+    def __init__(self,num_list):
+        super().__init__(num_list=num_list)
 
     def rank_seq(self):
         '''Classifica seq dos resultados'''
