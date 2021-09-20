@@ -6,8 +6,8 @@ from Model.os15 import Os15
 
 class Jogo(Os15):
     '''Classe que manipula números do jogo.'''
-    def __init__(self):
-        super().__init__()
+    def __init__(self,num_list):
+        super().__init__(num_list=num_list)
         self.pts=0
         self.erros=[]
         self.acertos=[]

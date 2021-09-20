@@ -13,8 +13,8 @@ class Usuario:
         self.pix=''
         self.email=''
         self.endereco=''
-    
-    def reg(self):
+        
+    def get(self):
         user= [self.id,self.username,self.nome,
                 self.data_nasc,self.cpf,
                 self.telefone,self.pix,self.email,self.endereco]

@@ -2,22 +2,22 @@
 # Aposta
 
 
-from Model.jogo import Jogo
-from Model.usuario import Usuario
-from Model.concurso import Concurso
+#from Model.jogo import Jogo
+#from Model.usuario import Usuario
+#from Model.concurso import Concurso
 
 
 class Aposta:
-    def __init__(self):
+    def __init__(self,cc,username,jogo):
         self.id=''
         self.nome=''
         self.grupo=''
         self.pag=False
-        self.cc=Concurso()
-        self.usuario=Usuario()
-        self.jogo=Jogo()
+        self.cc=cc #Concurso()
+        self.usuario=username #Usuario()
+        self.jogo=jogo #Jogo()
     
-    def reg(self):
+    def get(self):
         pass
     def verificar_pag(self):
         pass

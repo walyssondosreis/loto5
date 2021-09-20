@@ -10,8 +10,8 @@ class Concurso:
         self.num=0
         self.data=''
         self.valor_jogo=0
-        self.result=Resultado()
+        self.result=''#Resultado()
     
-    def reg(self):
+    def get(self):
         pass
 
