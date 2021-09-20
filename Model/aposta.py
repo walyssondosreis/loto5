@@ -13,9 +13,9 @@ class Aposta:
         self.nome=''
         self.grupo=''
         self.pag=False
-        self.cc=cc #Concurso()
-        self.usuario=username #Usuario()
-        self.jogo=jogo #Jogo()
+        self.cc=cc #Recebe Obj. Concurso()
+        self.usuario=username #Recebe var. Usuario().username
+        self.jogo=jogo #Recebe Obj. Jogo()
     
     def get(self):
         pass
