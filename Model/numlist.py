@@ -11,10 +11,8 @@ class NumList:
         #Ordena lista de números
         list=sorted(list)
         #Verifica quantidade de números permitidos
-        if 15 <= len(list) <=18 : print('Exatos ',len(list),' num')
-        elif len(list) <15 : print('ERRO: Menos de 15 num') ; return None
+        if len(list) <15 : print('ERRO: Menos de 15 num') ; return None
         elif len(list) >18 : print('ERRO: Mais de 18 num'); return None
-        else : return None
         #Verifica se só existem números de 1 a 25
         for x in list: 
             if x < 1 or x > 25: 

@@ -31,25 +31,32 @@ user1.endereco='Rua 16,31,Jardim Olimpico'
 
 # Cadastro de Resultado 
 res1=Resultado(nums7)
-print('Resultado',res1.nums)
+#print('Resultado',res1.nums)
 
 # Cadastro de Jogo
 jogo1=Jogo(nums1)
-print('Jogo:',jogo1.nums)
-print('Seq:',jogo1.seq())
-print('NumPar:',jogo1.par())
-print('NumImp:',jogo1.imp())
-print('NumPrim:',jogo1.prim())
+#print('Jogo:',jogo1.nums)
+#print('Seq:',jogo1.seq())
+#print('NumPar:',jogo1.par())
+#print('NumImp:',jogo1.imp())
+#print('NumPrim:',jogo1.prim())
 
 # Cadastro de Concurso
-cc1=Concurso(1)
-cc1.data='21.09.20'
-cc1.res=res1
-print('Concurso:',cc1.get())
-print('Concurso Res:',cc1.res.nums)
+cc1=Concurso()
+cc1.set(1,'21.09.20',res1)
+print(cc1.get())
+#print('Concurso:',cc1.get())
+#print('Concurso Res:',cc1.res.nums)
 
 # Cadastro de Aposta
 ap1=Aposta()
+ap1.set(user1,cc1,jogo1,'cobrakay','vox')
+print(ap1.get())
+
+
+
+
+
 
 
 
