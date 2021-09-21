@@ -8,49 +8,31 @@ from Model.aposta import Aposta
 from Model.usuario import Usuario
 
 #-------------------------------------------------------------------
-nums1 = [1,2,3, 4, 5,7, 9, 10, 15, 13, 16, 18, 19,20, 22,23,24,25]
-nums2 = [25, 13, 16, 1, 8, 9, 10, 11, 22, 15, 14, 19, 20, 7, 3]
-nums3 = [1, 3, 4, 7, 10, 12, 13, 14, 17, 18, 20, 22, 23, 24, 25]
-nums4 = [1, 2, 3, 5, 7, 10, 11, 14, 15, 17, 18, 20, 22, 24, 25]
-nums5 = [1, 3, 5, 7, 9, 10, 11, 12, 13, 14, 16, 17, 20, 23, 25]
-nums6 = [2, 3, 4, 7, 9, 10, 11, 12, 14, 16, 20, 21, 22, 24, 25]
+j1 =Jogo('Jogo_Teste01',[1,2,3, 4, 5,7, 9, 10, 15, 13, 16, 18, 19,20, 22,23,24,25])
+j2 =Jogo('Jogo_Teste02',[25, 13, 16, 1, 8, 9, 10, 11, 22, 15, 14, 19, 20, 7, 3])
+j3 =Jogo('Jogo_Teste03',[1, 3, 4, 7, 10, 12, 13, 14, 17, 18, 20, 22, 23, 24, 25])
+j4 =Jogo('Jogo_Teste04',[1, 2, 3, 5, 7, 10, 11, 14, 15, 17, 18, 20, 22, 24, 25])
+j5 =Jogo('Jogo_Teste05',[1, 3, 5, 7, 9, 10, 11, 12, 13, 14, 16, 17, 20, 23, 25])
+j6 =Jogo('Jogo_Teste06',[2, 3, 4, 7, 9, 10, 11, 12, 14, 16, 20, 21, 22, 24, 25])
 #-------------------------------------------------------------------
-nums7 = [2, 1, 24, 6, 9, 15, 13, 12, 22, 3, 21, 23, 25, 17, 5]
+r1 =Resultado([2, 1, 24, 6, 9, 15, 13, 12, 22, 3, 21, 23, 25, 17, 5])
 #-------------------------------------------------------------------
 
 # Cadastro de Usuário
-user1=Usuario('walyssondosreis')
-user1.id=1
-user1.nome='Walysson Pereira dos Reis'
-user1.data_nasc='13.07.1994'
-user1.cpf='115.169.236.00'
-user1.telefone='38984337424'
-user1.pix=user1.cpf
-user1.email='walyssondosreis@gmail.com'
-user1.endereco='Rua 16,31,Jardim Olimpico'
-
-# Cadastro de Resultado 
-res1=Resultado(nums7)
-#print('Resultado',res1.nums)
-
-# Cadastro de Jogo
-jogo1=Jogo(nums1)
-#print('Jogo:',jogo1.nums)
-#print('Seq:',jogo1.seq())
-#print('NumPar:',jogo1.par())
-#print('NumImp:',jogo1.imp())
-#print('NumPrim:',jogo1.prim())
+u1=Usuario()
+u1.set(1,'walyssondosreis','Walysson Pereira dos Reis','94.07.13',
+    '11516923600','38984334724','11516923600','walyssondosreis@email.com',
+    'Rua 16,31,Jardim Olimpico')
+#print(u1.get())
 
 # Cadastro de Concurso
 cc1=Concurso()
-cc1.set(1,'21.09.20',res1)
+cc1.set(1,'21.09.20',r1)
 print(cc1.get())
-#print('Concurso:',cc1.get())
-#print('Concurso Res:',cc1.res.nums)
 
 # Cadastro de Aposta
 ap1=Aposta()
-ap1.set(user1,cc1,jogo1,'cobrakay','vox')
+ap1.set(1,u1,cc1,j1,'vox')
 print(ap1.get())
 
 

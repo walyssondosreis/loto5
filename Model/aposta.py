@@ -9,26 +9,20 @@
 
 class Aposta:
     def __init__(self):
-        self.id=''
-        self.nome=''
-        self.grupo=''
-        self.pag=False
-        self.cc='' #Recebe Obj. Concurso()
-        self.usuario='' #Recebe Obj. Usuario()
-        self.jogo='' #Recebe Obj. Jogo()
-   
-    def set(self,user,cc,jogo,nome,grupo):
-        self.usuario=user
-        self.cc=cc
-        self.jogo=jogo
-        self.nome=nome
+        pass
+
+    def set(self,id,user,cc,jogo,grupo,pag=False):
+        self.id=id
+        self.usuario=user  #Recebe Obj. Usuario()
+        self.cc=cc  #Recebe Obj. Concurso()
+        self.jogo=jogo  #Recebe Obj. Jogo()
         self.grupo=grupo
+        self.pag=pag
 
     def get(self):
-        cc=[self.id,self.nome,self.grupo,
+        cc=[self.id,self.grupo,
             self.pag,self.cc.num,self.usuario.username,self.jogo.nums]
         return cc
-        
     def verificar_pag(self):
         pass
     def conferir_aposta(self):

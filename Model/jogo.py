@@ -6,8 +6,9 @@ from Model.numlist import NumList
 
 class Jogo(NumList):
     '''Classe que manipula números do jogo.'''
-    def __init__(self,num_list):
+    def __init__(self,nome_jogo,num_list):
         super().__init__(num_list=num_list)
+        self.nome_jogo=nome_jogo #Equivale a ID para Obj.Jogo() Único
 
     def pts(self, res):
         '''Metodo que retorna dict. com lista de erros, lista de acertos e número de pontos.'''
