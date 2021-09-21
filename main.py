@@ -42,12 +42,10 @@ u2.set(2,'vilmapsouza','Vilma Pereira de Souza','63.12.01',
 ap1=Aposta()
 ap1.set(1,u1,r1,j1,'vox')
 #print(ap1.get())
-
-#print(Store.apresentar())
+store1=Store()
 #print(Go.apresentar())
 #print(Max.apresentar())
-print(Pro.apresentar())
-
+#print(Pro.apresentar())
 
 
 
