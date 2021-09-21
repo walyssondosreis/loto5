@@ -65,7 +65,9 @@ class DB:
     # ===================================================================================================================
     def gravar_usuario(self):
         pass
-    def gravar_concurso(self):
+    def gravar_jogo(self):
+        pass
+    def gravar_resultado(self):
         pass
     def gravar_aposta(self):
         pass
@@ -75,7 +77,9 @@ class DB:
     # ===================================================================================================================
     def atualizar_usuario(self):
         pass
-    def atualizar_concurso(self):
+    def atualizar_jogo(self):
+        pass
+    def atualizar_resultado(self):
         pass
     def atualizar_aposta(self):
         pass
@@ -84,6 +88,8 @@ class DB:
     # Métodos de EXCLUSÃO no banco de dados
     # ===================================================================================================================
     def deletar_usuario(self):
+        pass
+    def deletar_jogo(self):
         pass
     def deletar_concurso(self):
         pass
@@ -94,6 +100,8 @@ class DB:
     # Métodos de BUSCA no banco de dados
     # ===================================================================================================================
     def buscar_usuario(self):
+        pass
+    def buscar_jogo(self):
         pass
     def buscar_concurso(self):
         pass

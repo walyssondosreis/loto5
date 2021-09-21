@@ -4,23 +4,8 @@
 class NumList:
     '''Classe pai da seq de números'''
     def __init__(self,num_list):
-        self.nums=self.validar(num_list)
+        self.nums=num_list
 
-    def validar(self,list):
-        '''Valida sequência de números da entrada.'''
-        #Ordena lista de números
-        list=sorted(list)
-        #Verifica quantidade de números permitidos
-        if len(list) <15 : print('ERRO: Menos de 15 num') ; return None
-        elif len(list) >18 : print('ERRO: Mais de 18 num'); return None
-        #Verifica se só existem números de 1 a 25
-        for x in list: 
-            if x < 1 or x > 25: 
-                print('ERRO: Num não aceito(s) na lista')
-                return None
-        return list
-        
-       
     def seq(self):
         '''Calcula seq dos números'''
         p1, p2, p3, p4, p5 = 0, 0, 0, 0, 0

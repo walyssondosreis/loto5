@@ -1,6 +1,10 @@
 # coding: utf-8
 # LOTO5
 
+from View.pro import Pro
+from View.max import Max
+from View.go import Go
+from View.store import Store
 from Model.resultado import Resultado
 from Model.jogo import Jogo
 from Model.aposta import Aposta
@@ -17,7 +21,8 @@ j6 =Jogo('Jogo_Teste06',[2, 3, 4, 7, 9, 10, 11, 12, 14, 16, 20, 21, 22, 24, 25])
 #-------------------------------------------------------------------
 # Cadastro de Resultado
 #-------------------------------------------------------------------
-r1 =Resultado(1,'21.09.20',[2, 1, 24, 6, 9, 15, 13, 12, 22, 3, 21, 23, 25, 17, 5])
+r1 =Resultado(1,'21.09.20',[2, 1, 24, 6, 9, 15, 13, 12, 22, 3, 21, 23, 25, 17,5])
+r2 =Resultado(1,'21.09.21',[5, 1, 20, 6, 9, 16, 14, 12, 22, 3, 21, 23, 25, 17, 10])
 #-------------------------------------------------------------------
 # Cadastro de Usuário
 #-------------------------------------------------------------------
@@ -36,10 +41,12 @@ u2.set(2,'vilmapsouza','Vilma Pereira de Souza','63.12.01',
 #-------------------------------------------------------------------
 ap1=Aposta()
 ap1.set(1,u1,r1,j1,'vox')
-print(ap1.get())
+#print(ap1.get())
 
-
-
+#print(Store.apresentar())
+#print(Go.apresentar())
+#print(Max.apresentar())
+print(Pro.apresentar())
 
 
 
