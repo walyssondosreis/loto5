@@ -1,11 +1,14 @@
 # coding: utf-8
 # GO : Tela p/ conferência de temperatura 
 
-class Max():
-    def apresentar():
+from View.tela import *
+
+
+class Max(Tela):
+    def __init__(self):
+        os.system('clear')
         print('------------LOTO 5\nby walyssondosreis')
         print('Conferir Temperatura de Resultados\n')
-        
         print('(01)-- Conferir Temperatura de Resultados')
         print('(02)-- Conferir Temperatura de Resultados por Ano')
         print('(03)-- Conferir Temperatura de Resultados por Mês')
@@ -21,5 +24,5 @@ class Max():
         print('(13)-- Conferir Temperatura de Resultados por dia')
         print('(14)-- Voltar')
         print('(15)-- Sair')
-        print('\nDigite sua opção: ')
+        decide=int(input('\nDigite sua opção: '))
 

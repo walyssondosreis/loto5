@@ -43,9 +43,6 @@ ap1=Aposta()
 ap1.set(1,u1,r1,j1,'vox')
 #print(ap1.get())
 store1=Store()
-#print(Go.apresentar())
-#print(Max.apresentar())
-#print(Pro.apresentar())
 
 
 

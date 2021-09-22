@@ -1,11 +1,14 @@
 # coding: utf-8
 # GO : Tela p/ conferência de apostas em concursos
 
-class Pro():
-    def apresentar():
+from View.tela import *
+
+
+class Pro(Tela):
+    def __init__(self):
+        os.system('clear')
         print('------------LOTO 5\nby walyssondosreis')
         print('Conferir Apostas em Resultados\n')
-        
         print('(01)-- Conferir Apostas em Resultados')
         print('(02)-- Conferir Apostas em Resultados por Sequência')
         print('(03)-- Conferir Apostas em Resultados por Seleção de Números')
@@ -15,4 +18,4 @@ class Pro():
         print('(07)-- Conferir Apostas em Resultados por Sequência, Ano e Mês')
         print('(08)-- Voltar')
         print('(09)-- Sair')
-        print('\nDigite sua opção: ')
+        decide=int(input('\nDigite sua opção: '))
