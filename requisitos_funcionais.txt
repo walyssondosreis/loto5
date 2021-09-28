@@ -1,0 +1,40 @@
+Tela STORE
+- Registrar Usuario
+- Registrar Aposta
+- Registrar Concurso*
+
+Tela GO
+- Conferir resultado de apostas por grupo
+- Conferir resultado de apostas por usuario
+- Conferir resultado de apostas por sequência
+- Conferir resultado de todas apostas
+- Conferir resultado de todas apostas pagas
+- Conferir resultado de todas apostas não pagas
+
+Tela MAX
+- Conferir temperatura de resultados.
+- Conferir temperatura de resultados por ano.
+- Conferir temperatura de resultados por mês.
+- Conferir temperatura de resultados por mês e ano.
+- Conferir temperatura de resultados por seq.
+- Conferir temperatura de resultados por seq e ano.
+- Conferir temperatura de resultados por seq, mês e ano.
+- Conferir temperatura de resultados por seq e mês.
+- Conferir temperatura de resultados por sele de num.
+- Conferir temperatura de resultados por sele de num e ano
+- Conferir temperatura de resultados por sele de num e mês.
+- Conferir temperatura de resultados por sele de num, mês e ano.
+- Conferir temperatura de resultados por dia.
+
+
+Tela PRO
+- Conferir aposta em concursos
+- Conferir aposta em concursos por seq
+- Conferir aposta em concursos por sele de num
+- Conferir aposta em concursos por ano
+- Conferir aposta em concursos por mês
+- Conferir aposta em concursos por mês e ano
+- Conferir aposta em concursos por seq mês e ano
+
+
+
