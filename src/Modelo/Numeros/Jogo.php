@@ -11,11 +11,19 @@ class Jogo extends ListaDeNumeros{
     private string $nomeJogo;
     private Usuario $usuario;
 
-    public function __construct(Usuario $usuario,Array $listaNumeros)
+    public function __construct(Usuario $usuario,Array $listaNumeros, string $nomeJogo='')
     {
 
         ListaDeNumeros::__construct($listaNumeros);
         $this->usuario=$usuario;
+        $this->nomeJogo=$nomeJogo;
         
+    }
+    public function obterJogo():array{
+        $jogo=array(
+            $this->listaNumeros,
+            $this->nomeJogo
+        );
+        return $jogo;
     }
 }
