@@ -1,5 +1,11 @@
 <?php
 
+namespace WallSoft\Loto5\Modelo;
+
+use WallSoft\Loto5\Modelo\Concurso;
+use WallSoft\Loto5\Modelo\Numeros\Jogo;
+use WallSoft\Loto5\Modelo\Usuario;
+
 class Aposta {
 
     private int $id;

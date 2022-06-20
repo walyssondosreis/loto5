@@ -1,5 +1,7 @@
 <?php
 
+namespace WallSoft\Loto5\Modelo;
+
 class Concurso{
 
     private int $numero;

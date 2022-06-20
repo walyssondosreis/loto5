@@ -1,6 +1,10 @@
 <?php
 
-require_once "src/listadenumeros.php";
+
+namespace WallSoft\Loto5\Modelo\Numeros;
+
+use WallSoft\Loto5\Modelo\Numeros\ListaDeNumeros;
+use WallSoft\Loto5\Modelo\Usuario;
 
 class Jogo extends ListaDeNumeros{
     private int $id;
