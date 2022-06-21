@@ -21,8 +21,9 @@ class Jogo extends ListaDeNumeros{
     }
     public function obterJogo():array{
         $jogo=array(
-            $this->listaNumeros,
-            $this->nomeJogo
+            'listaNumeros'=>$this->listaNumeros,
+            'nomeJogo'=>$this->nomeJogo,
+            'usuario'=>$this->usuario
         );
         return $jogo;
     }

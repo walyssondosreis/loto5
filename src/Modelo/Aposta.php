@@ -15,11 +15,25 @@ class Aposta {
     private string $grupo;
     private bool $pago;
 
-    public function __construct(Usuario $usuario, Concurso $concurso, Jogo $jogo)
+    public function __construct(Usuario $usuario, Concurso $concurso, Jogo $jogo, string $grupo='')
     {
         $this->usuario=$usuario;
         $this->concurso=$concurso;
         $this->jogo=$jogo;
+        $this->grupo=$grupo;
         
+    }
+    public function definirPagoAposta(bool $pago):void{
+        $this->pago=$pago;
+    }
+    
+    public function definirGrupoAposta(string $grupo):void{
+        $this->grupo=$grupo;
+    }
+    
+    public function obterDadosAposta():array{
+        $aposta=[];
+
+        return $aposta;
     }
 }

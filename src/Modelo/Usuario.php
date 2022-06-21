@@ -26,6 +26,7 @@ class Usuario{
     {
         return $this->nomeUsr;
     }
+
     public function definirPerfilUsuario(
         string $dataNasc,
         string $telefone,
@@ -39,6 +40,7 @@ class Usuario{
         $this->endereco=$endereco;
 
     }
+
     public function definirPixUsuario(
         string $numPix,
         string $bancoPix,
@@ -49,19 +51,15 @@ class Usuario{
         $this->nomePix=$nomePix;
 
     }
-    public function obterIdUsuario():array{
-        $id=array(
-            $this->nomeUsr,
-            $this->nome
-        );
-        return $id;
-    }
+
     public function obterPerfilUsuario():array{
         $usuario=array(
-            $this->dataNasc,
-            $this->telefone,
-            $this->email,
-            $this->endereco
+            'nomeUsr'=>$this->nomeUsr,
+            'nome'=>$this->nome,
+            'dataNasc'=>$this->dataNasc,
+            'telefone'=>$this->telefone,
+            'email'=>$this->email,
+            'endereco'=>$this->endereco
 
         );
         return $usuario;
@@ -69,9 +67,9 @@ class Usuario{
     }
     public function obterPixUsuario():array{
         $pix=array(
-            $this->numPix,
-            $this->bancoPix,
-            $this->nomePix
+            'numPix'=>$this->numPix,
+            'bancoPix'=>$this->bancoPix,
+            'nomePix'=>$this->nomePix
         );
         return $pix;
     }

@@ -15,16 +15,16 @@ class Concurso{
         $this->nomeEspecial=$nomeEspecial;
     }
 
-    public function definirPerfilConcurso(string $dataSorteio, string $nomeEspecial):void{
-        $this->dataSorteio=$dataSorteio; 
-        $this->nomeEspecial=$nomeEspecial;
+    public function definirPerfilConcurso(string $dataSorteio='', string $nomeEspecial=''):void{
+        if($dataSorteio!='') $this->dataSorteio=$dataSorteio; 
+        if($nomeEspecial!='') $this->nomeEspecial=$nomeEspecial;
     }
 
     public function obterConcurso():array{
         $concurso=array(
-            $this->numero,
-            $this->dataSorteio,
-            $this->nomeEspecial
+            'numero'=>$this->numero,
+            'dataSorteio'=>$this->dataSorteio,
+            'nomeEspecial'=>$this->nomeEspecial
         );
         return $concurso;
 
