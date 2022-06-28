@@ -5,7 +5,9 @@ namespace WallSoft\Loto5\modelo\numeros;
 use ArrayAccess;
 
 abstract class ListaDeNumeros{
-    protected  Array $listaNumeros;
+    
+    protected  Array $listaDeNumeros;
+
     /* Regras loteria  : lotofácil */
     private int $numInicial=1;
     private int $numFinal=25;
@@ -15,22 +17,22 @@ abstract class ListaDeNumeros{
     private int $maxNumerosGanhar = 15;
     private int $minNumerosGanhar = 11;
 
-    public function __construct(Array $listaNumeros)
+    public function __construct(Array $listaDeNumeros)
     {
-        if($this->validarNumeros($listaNumeros)){
-            $this->listaNumeros=$listaNumeros;
+        if($this->validarNumeros($listaDeNumeros)){
+            $this->listaDeNumeros=$listaDeNumeros;
         }
         else{
             echo "Erro: Números não seguem as regras do jogo";
         }
     }
 
-    private function validarNumeros($listaNumeros):bool{
-        if(count($listaNumeros) < $this->minNumerosMarcar) {
+    private function validarNumeros($listaDeNumeros):bool{
+        if(count($listaDeNumeros) < $this->minNumerosMarcar) {
             echo "Erro: Quantidade mínima de números a serem marcados são {$this->minNumerosMarcar}";
             return false;
         }
-        if(count($listaNumeros) > $this->maxNumerosMarcar){
+        if(count($listaDeNumeros) > $this->maxNumerosMarcar){
             echo "Erro: Quantidade máxima de números a serem marcados é {$this->maxNumerosMarcar}";
             return false;
         } 
@@ -47,7 +49,7 @@ abstract class ListaDeNumeros{
             'g5' =>[]  // Grupo 5 : De 21 a 25
         ];
 
-        foreach($this->listaNumeros as $num){
+        foreach($this->listaDeNumeros as $num){
             if($num<6) $sequencia['g1'][]=$num;
             elseif($num<11) $sequencia['g2'][]=$num;
             elseif($num<16) $sequencia['g3'][]=$num;
@@ -68,7 +70,7 @@ abstract class ListaDeNumeros{
 
     public function obterImpares():array{
         $impares=[];
-        foreach($this->listaNumeros as $num){
+        foreach($this->listaDeNumeros as $num){
             if($num%2!=0) $impares[]=$num;
         }
         return $impares;
@@ -77,7 +79,7 @@ abstract class ListaDeNumeros{
 
     public function obterPares():array{
         $pares=[];
-        foreach($this->listaNumeros as $num){
+        foreach($this->listaDeNumeros as $num){
             if($num%2==0) $pares[]=$num;
         }
         return $pares;
@@ -87,7 +89,7 @@ abstract class ListaDeNumeros{
     public function obterPrimos():array{
         $primos=[];
         $listaPrimos=[2,3,5,7,11,13,17,19,23];
-        foreach($this->listaNumeros as $num){
+        foreach($this->listaDeNumeros as $num){
             if(in_array($num,$listaPrimos)) $primos[]=$num;
         }
         return $primos;

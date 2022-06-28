@@ -22,12 +22,13 @@ $user01->definirPixUsuario('11516923600','Mercado Pago', 'Walysson Pereira dos R
 
 $user02= new Usuario('vilmap','Vilma Pereira de Souza');
 $user02->definirPixUsuario('vilmapereiradesouza2@gmail.com','Nubank','Vilma Pereira de Souza');
-echo var_dump($user02->obterPixUsuario());
+// echo var_dump($user02->obterPixUsuario());
 // //echo $user01;
 
 /* Cria concurso */
-// $cc01 = new Concurso(2500);
-// echo var_dump($cc01->obterConcurso());
+$cc01 = new Concurso(2500);
+$cc01->definirConcurso(dataSorteio:'28/06/2022',nomeEspecial:'Sorteio dos Milhões');
+echo var_dump($cc01->obterConcurso());
 
 /* Cria jogo */
 // $jogo01= new Jogo($user01,[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15],'Jogo Pobrão');
