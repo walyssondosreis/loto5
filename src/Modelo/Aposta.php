@@ -1,10 +1,11 @@
 <?php
 
-namespace WallSoft\Loto5\Modelo;
+namespace WallSoft\Loto5\modelo;
 
-use WallSoft\Loto5\Modelo\Concurso;
-use WallSoft\Loto5\Modelo\Numeros\Jogo;
-use WallSoft\Loto5\Modelo\Usuario;
+use WallSoft\Loto5\modelo\Concurso;
+use WallSoft\Loto5\modelo\numeros\Jogo;
+use WallSoft\Loto5\modelo\Usuario;
+use WallSoft\Loto5\modelo\Grupo;
 
 class Aposta {
 
@@ -12,10 +13,10 @@ class Aposta {
     private Concurso $concurso;
     private Jogo $jogo;
     private Usuario $usuario;
-    private string $grupo;
+    private Grupo $grupo;
     private bool $pago;
 
-    public function __construct(Usuario $usuario, Concurso $concurso, Jogo $jogo, string $grupo='')
+    public function __construct(Usuario $usuario, Concurso $concurso, Jogo $jogo, string $grupo=new Grupo('Lotofacil'))
     {
         $this->usuario=$usuario;
         $this->concurso=$concurso;
@@ -25,10 +26,6 @@ class Aposta {
     }
     public function definirPagoAposta(bool $pago):void{
         $this->pago=$pago;
-    }
-    
-    public function definirGrupoAposta(string $grupo):void{
-        $this->grupo=$grupo;
     }
     
     public function obterDadosAposta():array{

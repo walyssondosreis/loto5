@@ -1,26 +1,29 @@
 <?php
 
-namespace WallSoft\Loto5\Modelo;
+namespace WallSoft\Loto5\modelo;
+
+use WallSoft\Loto5\modelo\Pix;
 
 class Usuario{
-
+    /* Classe de usuário do sistema, 
+    os quais farão apostas, análises e checagem.*/
     private int $id;
     private string $nomeUsr;
     private string $nome;
     private string $dataNasc;
     private string $telefone;
-    private string $numPix;
-    private string $nomePix;
-    private string $bancoPix;
     private string $email;
     private string $endereco;
+    private array $pixis;
 
     public function __construct(
         string $nomeUsr,
         string $nome)
+        
     {
         $this->nomeUsr = $nomeUsr;
         $this->nome = $nome;
+        $this->pixis=[];
     }
     public function __toString()
     {
@@ -41,18 +44,20 @@ class Usuario{
 
     }
 
-    public function definirPixUsuario(
-        string $numPix,
-        string $bancoPix,
-        string $nomePix
-    ):void{
-        $this->numPix=$numPix;
-        $this->bancoPix=$bancoPix;
-        $this->nomePix=$nomePix;
-
+    public function definirPixUsuario(string $numPix, string $banco, string $nome):void{
+        /* Método para inclusão de Chave PIX para usuário.
+        Um usuário poderá ter várias chaves PIX, 
+        mas uma chave PIX só poderá estar associada a um usuário.  */
+        $pix=new Pix(
+            numPix: $numPix,
+            banco: $banco,
+            nome: $nome
+        );
+        array_push($this->pixis, $pix);
     }
 
     public function obterPerfilUsuario():array{
+        /* Método que retorna Array com propriedades do perfil do usuário. */
         $usuario=array(
             'nomeUsr'=>$this->nomeUsr,
             'nome'=>$this->nome,
@@ -66,11 +71,15 @@ class Usuario{
 
     }
     public function obterPixUsuario():array{
-        $pix=array(
-            'numPix'=>$this->numPix,
-            'bancoPix'=>$this->bancoPix,
-            'nomePix'=>$this->nomePix
-        );
-        return $pix;
+        /* Método que retorna Array com todos os PIXs cadastrados para o usuário. */
+        $pixList=array();
+
+        foreach($this->pixis as $pix){
+            $pixList[]=$pix->obterPix();
+        }
+
+        return $pixList;
     }
+
+
 }

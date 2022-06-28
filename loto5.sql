@@ -25,8 +25,7 @@ CREATE TABLE jogo(
 
 -- TABELA: RESULTADO
 CREATE TABLE resultado(
-
-    numConcurso INTEGER NOT NULL FOREIGN KEY REFERENCES concurso(numero),
+    numConcurso INTEGER  PRIMARY KEY NOT NULL FOREIGN KEY REFERENCES concurso(numero),
     listaNumeros VARCHAR(55) NOT NULL,
 );
 -- TABELA: CONCURSO

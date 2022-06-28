@@ -1,10 +1,10 @@
 <?php
 
 
-namespace WallSoft\Loto5\Modelo\Numeros;
+namespace WallSoft\Loto5\modelo\numeros;
 
-use WallSoft\Loto5\Modelo\Numeros\ListaDeNumeros;
-use WallSoft\Loto5\Modelo\Usuario;
+use WallSoft\Loto5\modelo\numeros\ListaDeNumeros;
+use WallSoft\Loto5\modelo\Usuario;
 
 class Jogo extends ListaDeNumeros{
     private int $id;

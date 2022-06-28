@@ -1,9 +1,9 @@
 <?php
 
-namespace WallSoft\Loto5\Modelo\Numeros;
+namespace WallSoft\Loto5\modelo\numeros;
 
-use WallSoft\Loto5\Modelo\Numeros\ListaDeNumeros;
-use  WallSoft\Loto5\Modelo\Concurso;
+use WallSoft\Loto5\modelo\numeros\ListaDeNumeros;
+use  WallSoft\Loto5\modelo\Concurso;
 
 class Resultado extends ListaDeNumeros{
 

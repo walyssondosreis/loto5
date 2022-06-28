@@ -1,6 +1,6 @@
 <?php
 
-namespace WallSoft\Loto5\Modelo;
+namespace WallSoft\Loto5\modelo;
 
 class Concurso{
 

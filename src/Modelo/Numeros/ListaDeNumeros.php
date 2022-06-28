@@ -1,6 +1,6 @@
 <?php
 
-namespace WallSoft\Loto5\Modelo\Numeros;
+namespace WallSoft\Loto5\modelo\numeros;
 
 use ArrayAccess;
 
