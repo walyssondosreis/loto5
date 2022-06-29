@@ -2,8 +2,6 @@
 
 namespace WallSoft\Loto5\modelo\numeros;
 
-use ArrayAccess;
-
 abstract class ListaDeNumeros{
     
     protected  Array $listaDeNumeros;

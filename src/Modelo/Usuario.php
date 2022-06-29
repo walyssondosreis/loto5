@@ -1,21 +1,20 @@
 <?php
 
 namespace WallSoft\Loto5\modelo;
+require_once "../loto5/helpers.php";
 
-use WallSoft\Loto5\modelo\Pix;
-
-class Usuario{
+class Usuario extends Db {
     /* Classe de usuário do sistema, 
     os quais farão apostas, análises e checagem.*/
     private int $id;
-    private string $nomeUsr;
-    private string $nome;
-    private string $cpf;
-    private string $dataNasc;
-    private string $telefone;
-    private string $email;
-    private string $endereco;
-    private array $pixis;
+    private string $nomeUsr;    // Obrigatório
+    private string $nome;       // Obrigatório
+    private string $cpf;        // Obrigatório
+    private string $dataNasc;   // Opcional
+    private string $telefone;   // Opcional
+    private string $email;      // Opcional
+    private string $endereco;   // Opcional
+    private array $pixis;       // Opcional
 
     public function __construct(
         string $nomeUsr,
@@ -23,6 +22,7 @@ class Usuario{
         string $cpf)
         
     {
+        parent::__construct();
         $this->nomeUsr = $nomeUsr;
         $this->nome = $nome;
         $this->cpf = $cpf;
@@ -34,13 +34,13 @@ class Usuario{
     }
 
     public function definirPerfilUsuario(
-        string $dataNasc,
-        string $telefone,
-        string $email,
-        string $endereco
+        string $dataNasc='',
+        string $telefone='',
+        string $email='',
+        string $endereco=''
 
     ):void{
-        $this->dataNasc=$dataNasc;
+        $this->dataNasc=alterarDataParaDb($dataNasc);
         $this->telefone=$telefone;
         $this->email=$email;
         $this->endereco=$endereco;
@@ -84,6 +84,36 @@ class Usuario{
 
         return $pixList;
     }
+    
+    public function gravarUsuario():void{
 
+        $campos=array('nomeUsr','nome','cpf');
+        $pixisId=array();
+       // Verifica se existem atributos opcionais
+        if(isset($this->dataNasc)&& !empty($this->dataNasc)) $campos[]='dataNasc';
+        if(isset($this->telefone)&& !empty($this->telefone)) $campos[]='telefone';
+        if(isset($this->email)&& !empty($this->email)) $campos[]='email';
+        if(isset($this->endereco)&& !empty($this->endereco)) $campos[]='endereco';
+        $valores= array();
+        foreach($campos as $campo){
+            $valores[]="'".$this->$campo ."'";
+        }
+        if(isset($this->pixis) && !empty($this->pixis)){
+            foreach($this->pixis as $pix) $pixisId[]=$pix->gravarPix();
+            $campos[]='pix';
+            $valores[]="'".implode('-',$pixisId)."'";
+        }
+       // Grava  Usuario
+        $query="
+            INSERT INTO usuario("
+                .implode(',',$campos)
+            .")VALUES("
+                .implode(',',$valores)
+            .");"
+        ;
+        //  echo $query;
+        $this->mysqli->query($query);
+        
+    }
 
 }

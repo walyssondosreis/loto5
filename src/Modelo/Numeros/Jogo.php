@@ -3,7 +3,6 @@
 
 namespace WallSoft\Loto5\modelo\numeros;
 
-use WallSoft\Loto5\modelo\numeros\ListaDeNumeros;
 use WallSoft\Loto5\modelo\Usuario;
 
 class Jogo extends ListaDeNumeros{

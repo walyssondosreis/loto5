@@ -2,7 +2,7 @@
 
 namespace WallSoft\Loto5\modelo;
 
-class Pix {
+class Pix extends Db{
     /* Classe PIX a qual contém dados e informações 
     para pagamento de apostas ao usuário. */
 
@@ -13,6 +13,7 @@ class Pix {
 
     public function __construct(string $numPix, string $banco, string $nome)
     {
+        parent::__construct();
         $this->numPix = $numPix;
         $this->nome = $nome;
         $this->banco = $banco;
@@ -26,6 +27,21 @@ class Pix {
             $this->banco
         );
         return $pix;
+    }
+    public function gravarPix():int{
+        $query="
+        INSERT INTO pix(
+            numPix,
+            nome,
+            banco
+        )VALUES(
+            '{$this->numPix}',
+            '{$this->nome}',
+            '{$this->banco}'
+        );";
+        $this->mysqli->query($query);
+        return  $this->mysqli->insert_id;
+
     }
 
 }

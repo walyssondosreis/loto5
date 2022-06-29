@@ -2,10 +2,7 @@
 
 namespace WallSoft\Loto5\modelo;
 
-use WallSoft\Loto5\modelo\Concurso;
 use WallSoft\Loto5\modelo\numeros\Jogo;
-use WallSoft\Loto5\modelo\Usuario;
-use WallSoft\Loto5\modelo\Grupo;
 
 class Aposta {
 
