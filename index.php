@@ -11,7 +11,7 @@ use WallSoft\Loto5\modelo\Pix;
 //$aposta01 = new Aposta($user01,$cc01,$jogo01);
 
 /* Cria usuário */
-$user01= new Usuario('walyssondosreis','Walysson dos Reis');
+$user01= new Usuario('walyssondosreis','Walysson dos Reis','11659465822');
 $user01->definirPerfilUsuario('13/07/1994','38984337424','walyssondosreis@gmail.com','Rua 16 n31 Jardim Olimpico - Montes Claros - MG');
 $user01->definirPixUsuario('38984337424','Nubank','Walysson dos Reis');
 $user01->definirPixUsuario('11516923600','Mercado Pago', 'Walysson Pereira dos Reis');
@@ -20,7 +20,7 @@ $user01->definirPixUsuario('11516923600','Mercado Pago', 'Walysson Pereira dos R
 
 
 
-$user02= new Usuario('vilmap','Vilma Pereira de Souza');
+$user02= new Usuario('vilmap','Vilma Pereira de Souza','55994826522');
 $user02->definirPixUsuario('vilmapereiradesouza2@gmail.com','Nubank','Vilma Pereira de Souza');
 // echo var_dump($user02->obterPixUsuario());
 // //echo $user01;

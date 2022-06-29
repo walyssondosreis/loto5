@@ -10,6 +10,7 @@ class Usuario{
     private int $id;
     private string $nomeUsr;
     private string $nome;
+    private string $cpf;
     private string $dataNasc;
     private string $telefone;
     private string $email;
@@ -18,11 +19,13 @@ class Usuario{
 
     public function __construct(
         string $nomeUsr,
-        string $nome)
+        string $nome,
+        string $cpf)
         
     {
         $this->nomeUsr = $nomeUsr;
         $this->nome = $nome;
+        $this->cpf = $cpf;
         $this->pixis=[];
     }
     public function __toString()
@@ -61,6 +64,7 @@ class Usuario{
         $usuario=array(
             'nomeUsr'=>$this->nomeUsr,
             'nome'=>$this->nome,
+            'cpf'=>$this->cpf,
             'dataNasc'=>$this->dataNasc,
             'telefone'=>$this->telefone,
             'email'=>$this->email,

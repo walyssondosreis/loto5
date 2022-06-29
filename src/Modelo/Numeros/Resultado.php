@@ -15,4 +15,18 @@ class Resultado extends ListaDeNumeros{
         $this->concurso=$concurso;
         
     }
+    
+    public function rankSequencia(){
+        /* Raqueia as sequências.: 
+            > De forma geral
+            > Com períodos de tempo definidos*/
+    }
+
+    public function rankInicidencia(){
+        /* Calcula incidência de um número .:
+            > Dentro de uma sequência
+            > De forma geral
+            > Com períodos de tempo definidos */
+    }
+
 }

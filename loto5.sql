@@ -9,38 +9,59 @@ CREATE TABLE usuario(
     cpf VARCHAR(18) UNIQUE,
     dataNasc DATE,
     telefone VARCHAR(12),
-    numPix TEXT,
-    nomePix VARCHAR(50),
-    bancoPix VARCHAR(20),
     email VARCHAR(50),
-    endereco TEXT
+    endereco TEXT,
+    pix VARCHAR(10)
+    
 );
+-- TABELA: PIX
+CREATE TABLE pix(
+    id INTEGER AUTO_INCREMENT PRIMARY KEY,
+    numPix TEXT UNIQUE NOT NULL,
+    nome VARCHAR(50) NOT NULL,
+    banco VARCHAR(20)
+    
+);
+
 -- TABELA: JOGO
 CREATE TABLE jogo(
     id INTEGER AUTO_INCREMENT PRIMARY KEY,
     nomeJogo VARCHAR(20) UNIQUE,
-    idUsuario INTEGER NOT NULL,
-    listaNumeros VARCHAR(55) NOT NULL
+    usuario INTEGER NOT NULL,
+    listaDeNumeros VARCHAR(55) NOT NULL
+);
+-- TABELA: CONCURSO
+CREATE TABLE concurso(
+    num INTEGER PRIMARY KEY,
+    dataSorteio DATE UNIQUE,
+    nomeEspecial VARCHAR(20)
+);
+
+-- TABELA: GRUPO
+CREATE TABLE grupo(
+    id INTEGER AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(20) UNIQUE
 );
 
 -- TABELA: RESULTADO
 CREATE TABLE resultado(
-    numConcurso INTEGER  PRIMARY KEY NOT NULL FOREIGN KEY REFERENCES concurso(numero),
-    listaNumeros VARCHAR(55) NOT NULL,
-);
--- TABELA: CONCURSO
-CREATE TABLE concurso(
-    numero INTEGER PRIMARY KEY,
-    dataSorteio DATE,
-    nomeEspecial VARCHAR(20)
+    concurso INTEGER  PRIMARY KEY,
+    listaDeNumeros VARCHAR(55) NOT NULL,
+    FOREIGN KEY (concurso)
+            REFERENCES concurso(num)
+            ON DELETE CASCADE
 );
 
 -- TABELA: APOSTA
 CREATE TABLE aposta(
-    id INTEGER PRIMARY KEY,
-    numConcurso INTEGER NOT NULL FOREIGN KEY REFERENCES concurso(numero),
-    idJogo INTEGER NOT NULL FOREIGN KEY REFERENCES jogo(id),
-    idUsuario INTEGER NOT NULL FOREIGN KEY REFERENCES usuario(id),
-    grupo VARCHAR(50),
-    pago BOOLEAN
+    id INTEGER AUTO_INCREMENT PRIMARY KEY,
+    concurso INTEGER NOT NULL ,
+    jogo INTEGER NOT NULL ,
+    usuario INTEGER NOT NULL ,
+    grupo INTEGER ,
+    pago BOOLEAN,
+    FOREIGN KEY (concurso) REFERENCES concurso(num),
+    FOREIGN KEY (jogo) REFERENCES jogo(id),
+    FOREIGN KEY (usuario) REFERENCES usuario(id),
+    FOREIGN KEY (grupo) REFERENCES grupo(id)
 );

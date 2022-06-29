@@ -22,15 +22,37 @@ class Aposta {
         $this->concurso=$concurso;
         $this->jogo=$jogo;
         $this->grupo=$grupo;
-        
+        $this->pago=false;
     }
     public function definirPagoAposta(bool $pago):void{
         $this->pago=$pago;
     }
     
-    public function obterDadosAposta():array{
+    public function definirGrupoAposta(Grupo $grupo){
+        $this->grupo=$grupo;
+    }
+
+    public function obterAposta():array{
         $aposta=[];
 
         return $aposta;
     }
+
+    public function obterPagoAposta():bool{
+        return $this->pago;
+    }
+    
+    public function conferirAposta(){
+        /* Confere resultado da aposta*/
+    }
+    
+    public function verificarInvestimento(){
+        /* Retorna valor investido na aposta */
+    }
+
+    public function verificarPremio(){
+        /* Retorna valor de prêmio da aposta */
+    }
+
+    
 }
