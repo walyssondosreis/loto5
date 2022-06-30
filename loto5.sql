@@ -4,14 +4,14 @@ CREATE DATABASE loto5 CHARACTER SET utf8 COLLATE utf8_general_ci;
 -- TABELA: USUARIO
 CREATE TABLE usuario(
     id INTEGER AUTO_INCREMENT PRIMARY KEY,
-    nomeUsr VARCHAR(20) NOT NULL,
+    nomeUsr VARCHAR(20) NOT NULL UNIQUE,
     nome VARCHAR(50) NOT NULL,
     cpf VARCHAR(18) UNIQUE,
     dataNasc DATE,
     telefone VARCHAR(12),
     email VARCHAR(50),
-    endereco TEXT,
-    pix VARCHAR(10)
+    endereco TEXT
+
     
 );
 -- TABELA: PIX
@@ -19,7 +19,12 @@ CREATE TABLE pix(
     id INTEGER AUTO_INCREMENT PRIMARY KEY,
     numPix TEXT UNIQUE NOT NULL,
     nome VARCHAR(50) NOT NULL,
-    banco VARCHAR(20)
+    banco VARCHAR(20),
+    usuario VARCHAR(20) NOT NULL,
+    FOREIGN KEY (usuario)
+            REFERENCES usuario(nomeUsr)
+            ON DELETE CASCADE
+
     
 );
 

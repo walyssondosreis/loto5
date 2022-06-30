@@ -13,16 +13,19 @@ use WallSoft\Loto5\modelo\Pix;
 /* Cria usuário */
 $user01= new Usuario('walyssondosreis','Walysson dos Reis','11659465822');
 $user01->definirPerfilUsuario('13/07/1994','38984337424','walyssondosreis@gmail.com','Rua 16 n31 Jardim Olimpico - Montes Claros - MG');
-$user01->definirPixUsuario('38984337424','Nubank','Walysson dos Reis');
-$user01->definirPixUsuario('11516923600','Mercado Pago', 'Walysson dos Reis');
+$pix02= new Pix($user01,'38984337424','Nubank','Walysson dos Reis');
+$pix01= new Pix($user01,'11516923600','Mercado Pago', 'Walysson dos Reis');
 
+// $user01->gravarUsuario();
+// $pix01->gravarPix();
+$pix02->gravarPix();
 // echo var_dump($user01->obterPerfilUsuario()); 
 
 
 
 $user02= new Usuario('vilmap','Vilma Pereira de Souza','55994826522');
-$user02->definirPixUsuario('vilmapereiradesouza2@gmail.com','Nubank','Vilma Pereira de Souza');
-$user02->definirPerfilUsuario(email:'vilmapereiradesouza2@gmail.com');
+// $user02->definirPixUsuario('vilmapereiradesouza2@gmail.com','Nubank','Vilma Pereira de Souza');
+// $user02->definirPerfilUsuario(email:'vilmapereiradesouza2@gmail.com');
 // echo var_dump($user02->obterPixUsuario());
 // echo $user01;
 
@@ -30,9 +33,9 @@ $user02->definirPerfilUsuario(email:'vilmapereiradesouza2@gmail.com');
 // $user01->gravarUsuario();
 
 /* Cria concurso */
-$cc01 = new Concurso(2500);
-$cc01->definirConcurso(dataSorteio:'28/06/2022');
-$cc01->gravarConcurso();
+// $cc01 = new Concurso(2500);
+// $cc01->definirConcurso(dataSorteio:'28/06/2022');
+// $cc01->gravarConcurso();
 // echo var_dump($cc01->obterConcurso());
 
 /* Cria jogo */
