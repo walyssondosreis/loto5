@@ -3,6 +3,7 @@
 namespace WallSoft\Loto5\modelo\numeros;
 
 use  WallSoft\Loto5\modelo\Concurso;
+use WallSoft\Loto5\modelo\Db;
 
 class Resultado extends ListaDeNumeros{
 
@@ -10,7 +11,7 @@ class Resultado extends ListaDeNumeros{
     
     public function __construct(Concurso $concurso,Array $listaDeNumeros)
     {
-        ListaDeNumeros::__construct($listaDeNumeros);
+        parent::__construct($listaDeNumeros);
         $this->concurso=$concurso;
         
     }
@@ -26,6 +27,30 @@ class Resultado extends ListaDeNumeros{
             > Dentro de uma sequência
             > De forma geral
             > Com períodos de tempo definidos */
+    }
+    
+    public function obterResultado():array{
+        $resultado=array(
+            'concurso'=>$this->concurso,
+            'listaDeNumeros'=>$this->listaDeNumeros
+        );
+
+        return $resultado;
+    }
+
+    public function gravarResultado(){ 
+        $query="
+        INSERT INTO resultado(
+            concurso,
+            listaDeNumeros
+        )VALUES(
+            {$this->concurso->obterConcurso()['num']},
+            '". implode('-',$this->listaDeNumeros) ."'
+
+        );";
+        // echo $query;
+        $this->mysqli->query($query);
+
     }
 
 }

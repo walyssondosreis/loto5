@@ -7,13 +7,13 @@ class Usuario extends Db {
     /* Classe de usuário do sistema, 
     os quais farão apostas, análises e checagem.*/
     private int $id;
-    private string $nomeUsr;    // Obrigatório
-    private string $nome;       // Obrigatório
-    private string $cpf;        // Obrigatório
-    private string $dataNasc;   // Opcional
-    private string $telefone;   // Opcional
-    private string $email;      // Opcional
-    private string $endereco;   // Opcional
+    private string $nomeUsr; 
+    private string $nome; 
+    private string $cpf; 
+    private $dataNasc='';   
+    private $telefone=''; 
+    private $email=''; 
+    private $endereco=''; 
 
     public function __construct(
         string $nomeUsr,
@@ -63,28 +63,25 @@ class Usuario extends Db {
     }
 
     public function gravarUsuario():void{
-
-        $campos=array('nomeUsr','nome','cpf');
-
-       // Verifica se existem atributos opcionais
-        if(isset($this->dataNasc)&& !empty($this->dataNasc)) $campos[]='dataNasc';
-        if(isset($this->telefone)&& !empty($this->telefone)) $campos[]='telefone';
-        if(isset($this->email)&& !empty($this->email)) $campos[]='email';
-        if(isset($this->endereco)&& !empty($this->endereco)) $campos[]='endereco';
-        $valores= array();
-        foreach($campos as $campo){
-            $valores[]="'".$this->$campo ."'";
-        }
-    
        // Grava  Usuario
-        $query="
-            INSERT INTO usuario("
-                .implode(',',$campos)
-            .")VALUES("
-                .implode(',',$valores)
-            .");"
-        ;
-        //  echo $query;
+        $query="INSERT INTO usuario(
+            nomeUsr,
+            nome,
+            cpf,
+            dataNasc,
+            telefone,
+            email,
+            endereco
+        )VALUES(
+            '{$this->nomeUsr}',
+            '{$this->nome}',
+            '{$this->cpf}',
+            '{$this->dataNasc}',
+            '{$this->telefone}',
+            '{$this->email}',
+            '{$this->endereco}'
+        );";
+        // echo $query;
         $this->mysqli->query($query);
         
     }

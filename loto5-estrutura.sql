@@ -24,28 +24,12 @@ CREATE TABLE pix(
     FOREIGN KEY (usuario)
             REFERENCES usuario(nomeUsr)
             ON DELETE CASCADE
-
-    
-);
-
--- TABELA: JOGO
-CREATE TABLE jogo(
-    id INTEGER AUTO_INCREMENT PRIMARY KEY,
-    nomeJogo VARCHAR(20) UNIQUE,
-    usuario INTEGER NOT NULL,
-    listaDeNumeros VARCHAR(55) NOT NULL
 );
 -- TABELA: CONCURSO
 CREATE TABLE concurso(
     num INTEGER PRIMARY KEY,
     dataSorteio DATE UNIQUE,
     nomeEspecial VARCHAR(20)
-);
-
--- TABELA: GRUPO
-CREATE TABLE grupo(
-    id INTEGER AUTO_INCREMENT PRIMARY KEY,
-    nome VARCHAR(20) UNIQUE
 );
 
 -- TABELA: RESULTADO
@@ -56,6 +40,22 @@ CREATE TABLE resultado(
             REFERENCES concurso(num)
             ON DELETE CASCADE
 );
+-- TABELA: GRUPO
+CREATE TABLE grupo(
+    id INTEGER AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(20) UNIQUE NOT NULL
+);
+
+-- TABELA: JOGO
+CREATE TABLE jogo(
+    id INTEGER AUTO_INCREMENT PRIMARY KEY,
+    nomeJogo VARCHAR(20) UNIQUE,
+    usuario VARCHAR(20) NOT NULL,
+    listaDeNumeros VARCHAR(55) NOT NULL,
+    FOREIGN KEY (usuario) 
+            REFERENCES usuario(nomeUsr)
+            ON DELETE CASCADE
+);
 
 -- TABELA: APOSTA
 CREATE TABLE aposta(
@@ -63,10 +63,10 @@ CREATE TABLE aposta(
     concurso INTEGER NOT NULL ,
     jogo INTEGER NOT NULL ,
     usuario INTEGER NOT NULL ,
-    grupo INTEGER ,
+    grupo INTEGER NOT NULL,
     pago BOOLEAN,
-    FOREIGN KEY (concurso) REFERENCES concurso(num),
-    FOREIGN KEY (jogo) REFERENCES jogo(id),
-    FOREIGN KEY (usuario) REFERENCES usuario(id),
-    FOREIGN KEY (grupo) REFERENCES grupo(id)
+    FOREIGN KEY (concurso) REFERENCES concurso(num) ON DELETE CASCADE, 
+    FOREIGN KEY (jogo) REFERENCES jogo(id) ON DELETE CASCADE,
+    FOREIGN KEY (usuario) REFERENCES usuario(id) ON DELETE CASCADE,
+    FOREIGN KEY (grupo) REFERENCES grupo(id) ON DELETE CASCADE
 );

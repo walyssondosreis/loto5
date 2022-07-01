@@ -2,12 +2,13 @@
 
 namespace  WallSoft\Loto5\modelo;
 
-class Grupo {
+class Grupo extends Db {
     private int $id;
     private string $nome;
 
     public function __construct($nome)
     {
+        parent::__construct();
         $this->nome=$nome;
         
     }
@@ -19,5 +20,14 @@ class Grupo {
             $this->nome
         );
         return $grupo;
+    }
+    public function gravarGrupo(){
+        $query="INSERT INTO grupo(
+            nome
+        )VALUES(
+            '{$this->nome}'
+        );";
+        // echo $query;
+        $this->mysqli->query($query);
     }
 }

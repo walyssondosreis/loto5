@@ -13,7 +13,7 @@ class Jogo extends ListaDeNumeros{
     public function __construct(Usuario $usuario,Array $listaDeNumeros, string $nomeJogo='')
     {
 
-        ListaDeNumeros::__construct($listaDeNumeros);
+        parent::__construct($listaDeNumeros);
         $this->usuario=$usuario;
         $this->nomeJogo=$nomeJogo;
         
@@ -50,6 +50,19 @@ class Jogo extends ListaDeNumeros{
 
     public function deuLoto(){
         /* Confere apenas se jogo já foi premiado com pontuação toatal */
+    }
+    public function gravarJogo(){
+        $query="INSERT INTO jogo(
+            nomeJogo,
+            usuario,
+            listaDeNumeros
+        )VALUES(
+            '{$this->nomeJogo}',
+            '{$this->usuario->obterPerfilUsuario()['nomeUsr']}',
+            '". implode('-',$this->listaDeNumeros) ."'
+        );";
+        // echo $query;
+        $this->mysqli->query($query);
     }
 
 }

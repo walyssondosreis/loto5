@@ -6,7 +6,7 @@ require_once "../loto5/helpers.php";
 class Concurso extends Db{
 
     private int $num;
-    private string $dataSorteio;
+    private $dataSorteio;
     private $nomeEspecial;
 
     public function __construct(int $num,string $dataSorteio='', string $nomeEspecial='')
@@ -32,8 +32,6 @@ class Concurso extends Db{
 
     }
     public function gravarConcurso(){
-        if($this->dataSorteio =='') $this->dataSorteio= NULL;
-        if($this->nomeEspecial=='') $this->nomeEspecial= NULL;
         $query="
         INSERT INTO concurso(
             num,

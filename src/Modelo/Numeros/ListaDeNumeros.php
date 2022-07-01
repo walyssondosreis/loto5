@@ -2,7 +2,9 @@
 
 namespace WallSoft\Loto5\modelo\numeros;
 
-abstract class ListaDeNumeros{
+use WallSoft\Loto5\modelo\Db;
+
+abstract class ListaDeNumeros extends Db{
     
     protected  Array $listaDeNumeros;
 
@@ -17,6 +19,7 @@ abstract class ListaDeNumeros{
 
     public function __construct(Array $listaDeNumeros)
     {
+        parent::__construct();
         if($this->validarNumeros($listaDeNumeros)){
             $this->listaDeNumeros=$listaDeNumeros;
         }
