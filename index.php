@@ -67,29 +67,6 @@ use WallSoft\Loto5\modelo\Pix;
 // $res01 = new Resultado($cc01,[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]);
 // $res01->gravarResultado();
 
+// include "povoaComCSV.php";
 
-/* Preenche DB Resultados Reais*/
-
-// $arq = fopen('lotofacil.csv','r');
-// $res=array();
-// while(!feof($arq)){
-//     $linhaArq =  fgets($arq);
-//     $res[]=explode(',',$linhaArq);
-// }
-
-// array_shift($res); // Remove cabeçalhos
-
-// foreach($res as $r){
-
-//     $cc=array_shift($r);
-//     array_shift($r);
-//     $resultado=new Resultado(new Concurso($cc),$r);
-//     $resultado->gravarResultado();
-    // $cc= new Concurso($numCC,$dataCC);
-    // $cc->gravarConcurso();
-    // echo var_dump($resultado->obterResultado()['listaDeNumeros']);
-// echo array_shift($res[0]); // Remove e retorna Concurso
-// echo array_shift($res[0]); // Remove e retorna Data Sorteio
-// echo var_dump($res[0]);
-    
-// }
+include "src/visao/cadastroAposta.php";

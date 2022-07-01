@@ -11,7 +11,6 @@ CREATE TABLE usuario(
     telefone VARCHAR(12),
     email VARCHAR(50),
     endereco TEXT
-
     
 );
 -- TABELA: PIX
