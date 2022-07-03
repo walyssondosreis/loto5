@@ -1,5 +1,4 @@
-
-<nav class="navbar bg-light" >
+<nav class="navbar bg-light ">
   <div class="container">
     <a class="navbar-brand" href="#">
       <!-- <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/MetroDF_L%C3%ADnea_5.svg/480px-MetroDF_L%C3%ADnea_5.svg.png" alt="" width="30" height="30" class="d-inline-block align-text-top"> -->

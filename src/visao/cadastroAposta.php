@@ -6,8 +6,8 @@ require_once "header.php";
     <?php
     require_once "navbar.php";
     ?>
-
     <main>
+
         <form action="" method="post">
 
             <div class="container">
@@ -62,37 +62,63 @@ require_once "header.php";
                 <table class="table">
                     <thead>
                         <tr>
+                            <th scope="col"></th>
                             <th scope="col">#</th>
-                            <th scope="col">First</th>
-                            <th scope="col">Last</th>
-                            <th scope="col">Handle</th>
+                            <th scope="col">Nome do jogo</th>
+                            <th scope="col">Números</th>
+                            <th scope="col">Qtd. números</th>
+                            <th scope="col">Valor</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
+                            <td>Editar <br> Remover</td>
                             <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
+                            <td>#2500@walyssondosreis#1</td>
+                            <td>1-2-3-4-5-6-7-8-9-10-11-12-13-14-15</td>
+                            <td>15</td>
+                            <td>R$ 2,50</td>
                         </tr>
                         <tr>
+                            <td>Editar <br> Remover</td>
                             <th scope="row">2</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
+                            <td>#2500@walyssondosreis#2</td>
+                            <td>1-2-3-4-5-6-7-8-9-10-11-12-13-14-15-16</td>
+                            <td>16</td>
+                            <td>R$ 40,00</td>
                         </tr>
                         <tr>
+                            <td>Editar <br> Remover</td>
                             <th scope="row">3</th>
-                            <td colspan="2">Larry the Bird</td>
-                            <td>@twitter</td>
+                            <td>#2500@walyssondosreis#3</td>
+                            <td>1-2-3-4-5-6-7-8-9-10-11-12-13-14-15-16-17</td>
+                            <td>17</td>
+                            <td>R$ 340,00</td>
+                        </tr>
+                        <tr>
+                            <td>Editar <br> Remover</td>
+                            <th scope="row">4</th>
+                            <td>#2500@walyssondosreis#4</td>
+                            <td>1-2-3-4-5-6-7-8-9-10-11-12-13-14-15-16-17-18</td>
+                            <td>18</td>
+                            <td>R$ 2040,00</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <th scope="row">Total: </th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>R$2239,00</td>
                         </tr>
                     </tbody>
                 </table>
                 <!-- Botões de finalização/submissão -->
 
-                <div class="container text-center">
-                    <button type="button" class="btn btn-primary btn-sm col">Limpar carrinho</button>
-                    <button type="button" class="btn btn-primary btn-sm col ">Finalizar aposta</button>
+                <div class="container text-center mb-5">
+                    <button type="button" class="btn btn-primary btn-md">Limpar carrinho</button>
+                    <button type="button" class="btn btn-primary btn-md">Salvar jogos</button>
+                    <button type="button" class="btn btn-primary btn-md">Salvar e apostar</button>
                 </div>
             </div>
         </form> <!-- Fecha formulário-->
