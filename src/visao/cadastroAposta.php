@@ -24,7 +24,7 @@ require_once "header.php";
                     <div class="container mb-3 text-center">
                         Escolha de 15 a 18 números
                     </div>
-                    <div class="container mb-3">
+                    <div class="container mb-3 text-center" style="width: 280px;">
                         <!-- Grupo de botões -->
                         <?php
                         $idBotao = "btncheck";
@@ -43,7 +43,7 @@ require_once "header.php";
 
                 <!-- Botões de finalização/submissão -->
 
-                <div class="container text-center">
+                <div class="container text-center mb-3">
                     <button type="button" class="btn btn-primary btn-sm col">Limpar aposta</button>
                     <button type="button" class="btn btn-primary btn-sm col">Adicionar carrinho</button>
                 </div>
@@ -74,7 +74,7 @@ require_once "header.php";
                         <tr>
                             <td>Editar <br> Remover</td>
                             <th scope="row">1</th>
-                            <td>#2500@walyssondosreis#1</td>
+                            <td>2500.1#walyssondosreis</td>
                             <td>1-2-3-4-5-6-7-8-9-10-11-12-13-14-15</td>
                             <td>15</td>
                             <td>R$ 2,50</td>
@@ -82,7 +82,7 @@ require_once "header.php";
                         <tr>
                             <td>Editar <br> Remover</td>
                             <th scope="row">2</th>
-                            <td>#2500@walyssondosreis#2</td>
+                            <td>2500.2#walyssondosreis</td>
                             <td>1-2-3-4-5-6-7-8-9-10-11-12-13-14-15-16</td>
                             <td>16</td>
                             <td>R$ 40,00</td>
@@ -90,7 +90,7 @@ require_once "header.php";
                         <tr>
                             <td>Editar <br> Remover</td>
                             <th scope="row">3</th>
-                            <td>#2500@walyssondosreis#3</td>
+                            <td>2500.3#walyssondosreis</td>
                             <td>1-2-3-4-5-6-7-8-9-10-11-12-13-14-15-16-17</td>
                             <td>17</td>
                             <td>R$ 340,00</td>
@@ -98,7 +98,7 @@ require_once "header.php";
                         <tr>
                             <td>Editar <br> Remover</td>
                             <th scope="row">4</th>
-                            <td>#2500@walyssondosreis#4</td>
+                            <td>2500.4#walyssondosreis</td>
                             <td>1-2-3-4-5-6-7-8-9-10-11-12-13-14-15-16-17-18</td>
                             <td>18</td>
                             <td>R$ 2040,00</td>
