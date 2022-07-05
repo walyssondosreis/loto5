@@ -10,22 +10,27 @@ class Usuario extends Db {
     private string $nomeUsr; 
     private string $nome; 
     private string $cpf; 
+    private string $senha;
     private $dataNasc='';   
     private $telefone=''; 
     private $email=''; 
     private $endereco=''; 
-
+    
     public function __construct(
         string $nomeUsr,
         string $nome,
-        string $cpf)
+        string $cpf,
+        string $senha='')
         
     {
         parent::__construct();
         $this->nomeUsr = $nomeUsr;
         $this->nome = $nome;
         $this->cpf = $cpf;
+        if($senha=='') $this->senha=$nomeUsr;
+        else $this->senha = $senha;
     }
+
     public function __toString()
     {
         return $this->nomeUsr;
@@ -42,7 +47,6 @@ class Usuario extends Db {
         $this->telefone=$telefone;
         $this->email=$email;
         $this->endereco=$endereco;
-
     }
 
 
@@ -56,18 +60,19 @@ class Usuario extends Db {
             'telefone'=>$this->telefone,
             'email'=>$this->email,
             'endereco'=>$this->endereco
-
         );
         return $usuario;
-
     }
 
     public function gravarUsuario():void{
+       // Criptografa senha 
+        $senha=password_hash($this->senha,PASSWORD_DEFAULT);
        // Grava  Usuario
         $query="INSERT INTO usuario(
             nomeUsr,
             nome,
             cpf,
+            senha,
             dataNasc,
             telefone,
             email,
@@ -76,6 +81,7 @@ class Usuario extends Db {
             '{$this->nomeUsr}',
             '{$this->nome}',
             '{$this->cpf}',
+            '{$senha}',
             '{$this->dataNasc}',
             '{$this->telefone}',
             '{$this->email}',
@@ -84,6 +90,11 @@ class Usuario extends Db {
         // echo $query;
         $this->mysqli->query($query);
         
+    }
+
+    public function autorizarLogin():bool{
+        $query ="SELECT nomeUsr";
+
     }
 
 }

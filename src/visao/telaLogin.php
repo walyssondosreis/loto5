@@ -5,7 +5,7 @@ require_once "header.php";
 <body class="text-center">
 
     <main class="form-signin w-100 m-auto">
-        <form>
+        <form method="POST">
             <!-- <img class="mb-4" src="../../../loto5/assets/brand/tiger.svg" alt="" width="72" height="57"> -->
             <img class="mb-4" src="../../../loto5/assets/brand/zebra.svg" alt="" width="200" height="250">
             <h1 class="h3 mb-3 fw-normal"> <strong> LOTO ZEBRA </strong></h1>

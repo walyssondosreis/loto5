@@ -6,6 +6,7 @@ CREATE TABLE usuario(
     id INTEGER AUTO_INCREMENT PRIMARY KEY,
     nomeUsr VARCHAR(20) NOT NULL UNIQUE,
     nome VARCHAR(50) NOT NULL,
+    senha VARCHAR(255) NOT NULL,
     cpf VARCHAR(18) UNIQUE,
     dataNasc DATE,
     telefone VARCHAR(12),
@@ -69,3 +70,7 @@ CREATE TABLE aposta(
     FOREIGN KEY (usuario) REFERENCES usuario(id) ON DELETE CASCADE,
     FOREIGN KEY (grupo) REFERENCES grupo(id) ON DELETE CASCADE
 );
+
+---------------------
+-- CRIA COLUNA NA TABELA USUARIO
+ALTER TABLE usuario ADD senha VARCHAR(255) AFTER nome;

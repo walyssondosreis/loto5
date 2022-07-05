@@ -10,7 +10,7 @@
     <link href="../../../loto5/assets/dist/css/bootstrap.min.css" rel="stylesheet">
     
     <!-- Meu estilo para personalizado -->
-    <link rel="stylesheet" href="../../../loto5/assets/dist/css/loto5.css"> -->
+    <link rel="stylesheet" href="../../../loto5/assets/dist/css/loto5.css">
 
 
 </head>
