@@ -69,4 +69,6 @@ use WallSoft\Loto5\modelo\Pix;
 
 // include "povoaComCSV.php";
 
-include "src/visao/cadastroAposta.php";
+// include "src/visao/cadastroAposta.php";
+// include "src/visao/telaLogin.php";
+include "src/visao/telaCadastroAposta.php";
