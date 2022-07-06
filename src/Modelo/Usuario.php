@@ -1,6 +1,9 @@
 <?php
 
 namespace WallSoft\Loto5\modelo;
+
+use function PHPSTORM_META\type;
+
 require_once "../loto5/helpers.php";
 
 class Usuario extends Db {
@@ -18,8 +21,8 @@ class Usuario extends Db {
     
     public function __construct(
         string $nomeUsr,
-        string $nome,
-        string $cpf,
+        string $nome='',
+        string $cpf='',
         string $senha='')
         
     {
@@ -93,8 +96,21 @@ class Usuario extends Db {
     }
 
     public function autorizarLogin():bool{
-        $query ="SELECT nomeUsr";
+        // Busca usuario no banco 
+        $query ="SELECT nomeUsr,senha 
+        FROM usuario
+        WHERE nomeUsr='{$this->nomeUsr}'
+        ";
+        $resultado=$this->mysqli->query($query);
+        $usuario = mysqli_fetch_array($resultado);
 
+        // Verifica se usuário foi encontrado
+        if($usuario == null) return false;
+
+        // Verifica se senha esta correta
+        if(!password_verify($this->senha,$usuario['senha'])) return false;
+        return true;
+    
     }
 
 }

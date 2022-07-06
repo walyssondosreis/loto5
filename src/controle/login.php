@@ -1,13 +1,21 @@
 <?php
 
+use WallSoft\Loto5\modelo\Usuario;
+
+
 
 if(isset($_POST['iptNomeUsuario'])&& 
 isset($_POST['iptSenha'])&&
 !empty(trim($_POST['iptNomeUsuario']))){
-    $usuarioLogado= $_POST['iptNomeUsuario'];
-    $usuarioLogadoSenha= $_POST['iptSenha'];
-     echo $usuarioLogado;
-     echo $usuarioLogadoSenha;die();
-
+    $usuarioSessao= new Usuario(
+        nomeUsr: $_POST['iptNomeUsuario'],
+        senha: $_POST['iptSenha']);
+        
+     if($usuarioSessao->autorizarLogin()) {
+        header('Location: src/Visao/telaCadastroAposta.php');
+     }
+     // verificar se usuário existe na base
+     // verificar se senha confere com a informada
+     // Autorizar login e redirecionar para tela principal
      
 }
