@@ -13,6 +13,7 @@ isset($_POST['iptSenha'])&&
         
      if($usuarioSessao->autorizarLogin()) {
         header('Location: src/Visao/telaCadastroAposta.php');
+        die();
      }
      // verificar se usuário existe na base
      // verificar se senha confere com a informada
