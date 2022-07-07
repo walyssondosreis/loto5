@@ -4,6 +4,7 @@ use WallSoft\Loto5\modelo\Usuario;
 
 require_once "autoload.php";
 
+session_start();
 
 // $user01= new Usuario('kemelp','Kemel Pinto','22589566699','12345678');
 // $user02= new Usuario('miaa','Mia Arengazza','11475896588');
@@ -19,6 +20,6 @@ require_once "autoload.php";
 
 // echo var_dump($user01);
 
-include "src/controle/login.php";
-include "src/visao/telaLogin.php";
+require_once "src/controle/login.php";
+require_once "src/visao/telaLogin.php";
 // include "src/visao/telaCadastroAposta.php";

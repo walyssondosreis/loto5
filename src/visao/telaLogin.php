@@ -11,11 +11,11 @@ require_once "header.php";
             <h1 class="h3 mb-3 fw-normal"> <strong> LOTO ZEBRA </strong></h1>
 
             <div class="form-floating">
-                <input type="text" class="form-control text-center" id="iptNomeUsuario" name="iptNomeUsuario">
+                <input type="text" class="form-control text-center" id="iptNomeUsuario" name="iptNomeUsuario" required>
                 <label for="iptNomeUsuario">Usuário</label>
             </div>
             <div class="form-floating">
-                <input type="password" class="form-control text-center" id="iptSenha" name="iptSenha">
+                <input type="password" class="form-control text-center" id="iptSenha" name="iptSenha" required>
                 <label for="iptSenha">Senha</label>
             </div>
 
