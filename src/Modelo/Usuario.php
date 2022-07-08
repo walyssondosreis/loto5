@@ -97,7 +97,7 @@ class Usuario extends Db {
 
     public function autorizarLogin():bool{
         // Busca usuario no banco 
-        $query ="SELECT nomeUsr,senha 
+        $query ="SELECT nomeUsr,senha,nome 
         FROM usuario
         WHERE nomeUsr='{$this->nomeUsr}'
         ";
@@ -109,6 +109,11 @@ class Usuario extends Db {
 
         // Verifica se senha esta correta
         if(!password_verify($this->senha,$usuario['senha'])) return false;
+        
+        // Grava nome do usuario no objeto 
+        $this->nome = $usuario['nome'];
+
+        
         return true;
     
     }

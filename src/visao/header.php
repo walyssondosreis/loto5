@@ -12,6 +12,8 @@
     <!-- Meu estilo para personalizado -->
     <link rel="stylesheet" href="../../../loto5/assets/dist/css/loto5.css">
 
+    <?php 
+    if(!isset($_SESSION)) session_start(); ?>
 
 </head>
 
