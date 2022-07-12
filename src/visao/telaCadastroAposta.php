@@ -22,7 +22,8 @@ require_once "header.php";
                 <div class="col-md-5 col-lg-6 order-md-last">
                     <h4 class="d-flex justify-content-between align-items-center mb-3">
                         <span class="text-primary">Seu carrinho</span>
-                        <span class="badge bg-primary rounded-pill">3</span>
+                        <!-- Pill conta o número de itens do carrinho -->
+                        <span class="badge bg-primary rounded-pill"></span>
 
                     </h4>
                     <div class="container text-center mb-3">
@@ -88,7 +89,7 @@ require_once "header.php";
                 </div>
                 <!-- FIM CARRINHO APOSTA -->
                 <div class="col-md-6 col-lg-6">
-                    <h4> Bem Vindo <?php echo $_SESSION['nomeUsuarioLogado'] . " !"?></h4>
+                    <h4> Bem Vindo <?php echo $usuarioLogado->obterPerfilUsuario()['nome'] ." !"?></h4>
                     <p class="lead">Escolha de 15 a 18 números para jogar</p>
                     <form class="needs-validation" novalidate>
 

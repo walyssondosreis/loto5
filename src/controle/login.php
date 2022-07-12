@@ -2,6 +2,7 @@
 
 use WallSoft\Loto5\modelo\Usuario;
 
+session_start();
 
 // Verifica formulário de login
 if (
@@ -17,10 +18,9 @@ if (
 
   // Verifica se usuário esta autorizado a logar no sistema
   if ($usuarioSessao->autorizarLogin()) {
-    $nomeUsuario = explode(' ', $usuarioSessao->obterPerfilUsuario()['nome']);
-    $_SESSION['nomeUsuarioLogado'] =  $nomeUsuario[0];
+    $_SESSION['nomeUsuarioLogado'] =  $usuarioSessao->obterPerfilUsuario()['nome'];
     $_SESSION['nomeUsrUsuarioLogado'] = $usuarioSessao->obterPerfilUsuario()['nomeUsr'];
-    header('Location: src/Visao/telaCadastroAposta.php');
+    header('Location: src/controle/home.php');
     die();
   }
 }
