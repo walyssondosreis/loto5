@@ -13,3 +13,4 @@ require_once "autoload.php";
 
 require_once "src/controle/login.php";
 require_once "src/visao/telaLogin.php";
+// require_once "src/controle/home.php";

@@ -1,7 +1,7 @@
 <?php
 
 namespace WallSoft\Loto5\modelo;
-require_once "../loto5/helpers.php";
+require_once __DIR__."/../../helpers.php";
 
 class Concurso extends Db{
 

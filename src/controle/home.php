@@ -1,16 +1,16 @@
 <?php
+session_start();
+
+require_once __DIR__."/../../autoload.php";
 
 use WallSoft\Loto5\modelo\Usuario;
 
-session_start();
-
-$usuarioLogado= new Usuario(
+$usuarioLogado= new  Usuario(
     nomeUsr: $_SESSION['nomeUsrUsuarioLogado'],
     nome: $_SESSION['nomeUsuarioLogado']
 );
 
-echo var_dump($usuarioLogado);
-exit();
+$primeiroNomeUsuario=explode(' ',$usuarioLogado->obterPerfilUsuario()['nome'])[0];
 
-// require_once "../Visao/telaCadastroAposta.php";
+require_once "../Visao/telaCadastroAposta.php";
 

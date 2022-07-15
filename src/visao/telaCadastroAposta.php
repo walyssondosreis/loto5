@@ -89,7 +89,7 @@ require_once "header.php";
                 </div>
                 <!-- FIM CARRINHO APOSTA -->
                 <div class="col-md-6 col-lg-6">
-                    <h4> Bem Vindo <?php echo $usuarioLogado->obterPerfilUsuario()['nome'] ." !"?></h4>
+                    <h4> Bem Vindo <?php echo $primeiroNomeUsuario ." !"?></h4>
                     <p class="lead">Escolha de 15 a 18 números para jogar</p>
                     <form class="needs-validation" novalidate>
 

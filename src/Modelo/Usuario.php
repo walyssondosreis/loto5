@@ -2,9 +2,7 @@
 
 namespace WallSoft\Loto5\modelo;
 
-use function PHPSTORM_META\type;
-
-require_once "../loto5/helpers.php";
+require_once __DIR__."/../../helpers.php";
 
 class Usuario extends Db {
     /* Classe de usuário do sistema, 
