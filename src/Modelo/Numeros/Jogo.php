@@ -27,7 +27,14 @@ class Jogo extends ListaDeNumeros{
         );
         return $jogo;
     }
+    public function obterValorJogo():float{
+        if(count($this->listaDeNumeros)==15) return 2.5;
+        if(count($this->listaDeNumeros)==16) return 40;
+        if(count($this->listaDeNumeros)==17) return 340;
+        if(count($this->listaDeNumeros)==18) return 2040;
+        return 0;
 
+    }
     public function verificarDuplicado(){
         /* Verifica se jogo já esta registrado e retorna bool*/
     }

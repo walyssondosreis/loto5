@@ -3,6 +3,7 @@ session_start();
 
 require_once __DIR__."/../../autoload.php";
 
+use WallSoft\Loto5\modelo\numeros\Jogo;
 use WallSoft\Loto5\modelo\Usuario;
 
 $usuarioLogado= new  Usuario(
@@ -12,26 +13,27 @@ $usuarioLogado= new  Usuario(
 
 $primeiroNomeUsuario=explode(' ',$usuarioLogado->obterPerfilUsuario()['nome'])[0];
 
-$carrinhoDeJogos = array(
-    // [
-    //     'numeros'=>"1-2-3-4-5-6-7-8-9-10-11-12-13-14-15",
-    //     'nome'=>"nomeJogo",
-    //     'valor'=>2.5
-    // ]
-);
+$carrinhoDeJogos = array();
 
-$jogoMarcado;
-
+// Verifica se existe um carrinho de jogos na sessão
+if(isset($_SESSION['carrinhoDeJogos'])){
+    foreach($_SESSION['carrinhoDeJogos'] as $jogo){
+        $carrinhoDeJogos[]=$jogo;
+    }
+}
 
 if(isset($_POST['numeros'])){
     // var_dump($_POST['numeros']);
     // exit();
+    $jogo=new Jogo($usuarioLogado,$_POST['numeros']);
     $jogoMarcado=[
-        'numeros'=>implode('-',$_POST['numeros'])
-        ,'nome'=>'aleatorio'
-        ,'valor'=>2.5
+        'numeros'=>implode('-',$jogo->obterJogo()['listaDeNumeros']),
+        ,'nome'=>$jogo->obterJogo()['nomeJogo'],
+        ,'valor'=>$jogo->obterValorJogo()
     ];
     $carrinhoDeJogos[]=$jogoMarcado;
+    $_SESSION['carrinhoDeJogos'][]=$jogoMarcado;
+    // echo var_dump($_SESSION['carrinhoDeJogos']);exit();
 
 }
 if(isset($_POST['numerosLinha'])&& strlen($_POST['numerosLinha']>0)){
