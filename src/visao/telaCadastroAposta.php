@@ -32,66 +32,42 @@ require_once "header.php";
                         <a href="">(Alterar)</a>
                     </div>
                     <ul class="list-group mb-3">
+                        <?php
+                        $valorTotal = 0;
+                        foreach ($carrinhoDeJogos as $jogo) : ?>
 
-                        <li class="list-group-item d-flex justify-content-between lh-sm">
-                        x e
-                            <div>
-                            
-                                <h6 class="my-0">1-2-3-4-5-6-7-8-9-10-11-12-13-14-15</h6>
-                                <small class="text-muted">2500.1#walyssondosreis</small>
+                            <li class="list-group-item d-flex justify-content-between lh-sm">
+                                <a href=""><img src="../../assets/brand/excluir.webp" width="20" height="20"></a>
+                                <a href=""><img src="../../assets/brand/editar.png" width="20" height="20"></a>
+                                <div>
 
-                            </div>
-                            <span class="text-muted">R$ 2,50</span>
-                        </li>
-                        <li class="list-group-item d-flex justify-content-between lh-sm">
-                        x e
-                            <div>
-                            
-                                <h6 class="my-0">1-2-3-4-5-6-7-8-9-10-11-12-13-14-15-16</h6>
-                                <small class="text-muted">2500.2#walyssondosreis</small>
+                                    <h6 class="my-0"><?= $jogo['numeros'] ?></h6>
+                                    <small class="text-muted"><?= $jogo['nome'] ?></small>
 
-                            </div>
-                            <span class="text-muted">R$ 40,00</span>
-                        </li>
-                        <li class="list-group-item d-flex justify-content-between lh-sm">
-                        x e
-                            <div>
-                            
-                                <h6 class="my-0">1-2-3-4-5-6-7-8-9-10-11-12-13-14-15-16-17</h6>
-                                <small class="text-muted">2500.3#walyssondosreis</small>
-
-                            </div>
-                            <span class="text-muted">R$ 340,00</span>
-                        </li>
-                        <li class="list-group-item d-flex justify-content-between lh-sm">
-                        x e
-                            <div>
-                            
-                                <h6 class="my-0">1-2-3-4-5-6-7-8-9-10-11-12-13-14-15-16-17-18</h6>
-                                <small class="text-muted">2500.4#walyssondosreis</small>
-
-                            </div>
-                            <span class="text-muted">R$ 2040,00</span>
-                        </li>
-                        
+                                </div>
+                                <span class="text-muted"><?= $jogo['valor'] ?></span>
+                            </li>
+                        <?php
+                            $valorTotal += $jogo['valor'];
+                        endforeach ?>
                         <li class="list-group-item d-flex justify-content-between">
                             <span>Total (BR)</span>
-                            <strong>R$ 2442,50</strong>
+                            <strong><?php echo $valorTotal; ?></strong>
                         </li>
                     </ul>
 
-                    <form class="card p-2">
+                    <form class="card p-2" method="POST">
                         <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Inserir jogo por linha">
+                            <input type="text" name="numerosLinha" class="form-control" placeholder="Inserir jogo por linha">
                             <button type="submit" class="btn btn-secondary">Incluir</button>
                         </div>
                     </form>
                 </div>
                 <!-- FIM CARRINHO APOSTA -->
                 <div class="col-md-6 col-lg-6">
-                    <h4> Bem Vindo <?php echo $primeiroNomeUsuario ." !"?></h4>
+                    <h4> Bem Vindo <?php echo $primeiroNomeUsuario . " !" ?></h4>
                     <p class="lead">Escolha de 15 a 18 números para jogar</p>
-                    <form class="needs-validation" novalidate>
+                    <form class="needs-validation" novalidate method="POST">
 
                         <div class="row g-2">
 
@@ -103,7 +79,7 @@ require_once "header.php";
                                 for ($i = 1; $i <= 25; $i++) :
                                 ?>
                                     <div class="btn-group" role="group">
-                                        <input type="checkbox" class="btn-check " value=<?php echo $i ?> id=<?php echo $idBotao . $i ?> autocomplete="off">
+                                        <input type="checkbox" class="btn-check " value=<?php echo $i ?> name="numeros[]" id=<?php echo $idBotao . $i ?> autocomplete="off">
                                         <label class="btn btn-outline-dark rounded-circle border border-2 border-secondary" style="font-weight: bold;" for=<?php echo $idBotao . $i ?>> <?php echo str_pad($i, 2, '0', STR_PAD_LEFT) ?></label>
                                     </div> <!-- Fim grupo de botões -->
                                 <?php endfor ?>
@@ -127,8 +103,8 @@ require_once "header.php";
                             <!-- Botões de finalização/submissão -->
 
                             <div class="col-12 text-center">
-                                <button type="button" class="btn btn-secondary btn-md col-5">Limpar aposta</button>
-                                <button type="button" class="btn btn-dark btn-md col-5">Adicionar carrinho</button>
+                                <button type="reset" class="btn btn-secondary btn-md col-5">Limpar aposta</button>
+                                <button type="submit" class="btn btn-dark btn-md col-5">Adicionar carrinho</button>
                             </div>
 
                         </div>
