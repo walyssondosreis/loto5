@@ -22,20 +22,27 @@ if(isset($_SESSION['carrinhoDeJogos'])){
     }
 }
 
-if(isset($_POST['numeros'])){
+// session_destroy();
+if(isset($_POST['numeros'])&&!empty($_POST['numeros'])){
     // var_dump($_POST['numeros']);
     // exit();
+    try{
     $jogo=new Jogo($usuarioLogado,$_POST['numeros']);
+    // echo var_dump($numeros);exit;
+    }catch(RuntimeException $e){
+        echo $e->getMessage();
+    }
     $jogoMarcado=[
-        'numeros'=>implode('-',$jogo->obterJogo()['listaDeNumeros']),
-        ,'nome'=>$jogo->obterJogo()['nomeJogo'],
-        ,'valor'=>$jogo->obterValorJogo()
+        'numeros'=> implode('-',$jogo->obterJogo()['listaDeNumeros'])
+        ,'nome'=> $jogo->obterJogo()['nomeJogo']
+        ,'valor'=> $jogo->obterValorJogo()
     ];
+    
     $carrinhoDeJogos[]=$jogoMarcado;
     $_SESSION['carrinhoDeJogos'][]=$jogoMarcado;
     // echo var_dump($_SESSION['carrinhoDeJogos']);exit();
-
 }
+
 if(isset($_POST['numerosLinha'])&& strlen($_POST['numerosLinha']>0)){
     $jogoMarcado=[
         'numeros'=>$_POST['numerosLinha']
